@@ -1,0 +1,12 @@
+<form action="/techniques/search" method="GET">
+  <input name="query" type="text" />
+  <button type="submit">Search</button>
+</form>
+
+<% @techniques.each{|technique| %>
+
+  <%= technique.try(:title) %>
+  <br/>
+  <%= technique.try(:description) %>
+
+<% } %>

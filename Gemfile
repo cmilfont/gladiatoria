@@ -14,12 +14,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'elasticsearch'
+
 group :test, :development do
+  gem 'fakeweb'
   gem 'shoulda'
   gem 'factory_girl'
   gem 'database_cleaner'
   gem 'rspec-rails'
+
+  gem 'capybara'
+  #gem 'capybara-webkit'
+
 end
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
