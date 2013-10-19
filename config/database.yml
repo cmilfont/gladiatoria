@@ -1,0 +1,16 @@
+development: &development
+  adapter: postgresql
+  encoding: utf8
+  database: gladiatoria_development
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+
+test: &test
+  <<: *development
+  database: gladiatoria_test
+
+production: &production
+  <<: *development
+  database: gladiatoria_production
