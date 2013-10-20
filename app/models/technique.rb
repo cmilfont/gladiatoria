@@ -26,13 +26,13 @@ class Technique < ActiveRecord::Base
 
 
   def self.search query=""
+    begin
+      results = Technique.esclient.search index:"techniques", body:"{\"query\": {\"query_string\": {\"query\": \"#{query}\"}}}"
+      ids = results["hits"]["hits"].map{ |hit| hit["_id"] }
+      find ids
+    rescue
+      []
+    end
+  end  # /search
 
-    return [] unless query.present?
-
-    results = Technique.esclient.search index:"techniques", body:"{\"query\": {\"query_string\": {\"query\": \"#{query}\"}}}"
-    ids = results["hits"]["hits"].map{ |hit| hit["_id"] }
-    find ids
-
-  end
-
-end
+end  # /Technique
