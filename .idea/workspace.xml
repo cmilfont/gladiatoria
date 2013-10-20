@@ -22,7 +22,7 @@
     <file path="/search.html.erb" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382216661057" ignored="false" />
     <file path="$PROJECT_DIR$/../martialarts/spec/models/martialart_spec.rb" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382268834290" ignored="false" />
     <file path="/seeds.rb" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382271237072" ignored="false" />
-    <file path="/production.rb" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382275579892" ignored="false" />
+    <file path="/production.rb" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382275847672" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="46" selection-start="3298" selection-end="3298" vertical-scroll-proportion="0.83455884">
+            <state line="80" column="100" selection-start="3352" selection-end="3352" vertical-scroll-proportion="0.83455884">
               <folding />
             </state>
           </provider>
@@ -974,7 +974,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="46" selection-start="3298" selection-end="3298" vertical-scroll-proportion="0.83455884">
+        <state line="80" column="100" selection-start="3352" selection-end="3352" vertical-scroll-proportion="0.83455884">
           <folding />
         </state>
       </provider>
