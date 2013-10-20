@@ -26,4 +26,7 @@ Gladiatoria::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  ENV['SEARCHBOX_URL'] = 'localhost:9200'
+
 end

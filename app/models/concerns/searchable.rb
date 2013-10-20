@@ -11,7 +11,7 @@ module Searchable
     self.index = {}
     self.index[self.name.tableize.to_sym] = { mappings: {}, settings: {} }
     self.index[self.name.tableize.to_sym][:mappings][self.name.tableize.singularize.to_sym] = {}
-    self.esclient = Elasticsearch::Client.new host: 'localhost:9200'
+    self.esclient = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
 
     after_update do
       update_document
