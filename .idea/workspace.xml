@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61abe55d-3786-4c97-9333-35d292b3f68f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-    </list>
+    <list default="true" id="61abe55d-3786-4c97-9333-35d292b3f68f" name="Default" comment="" />
     <ignored path="gladiatoria.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="61abe55d-3786-4c97-9333-35d292b3f68f" time="1382268617665" ignored="false" />
