@@ -16,6 +16,8 @@ end
 
 gem 'elasticsearch'
 
+gem 'rails_12factor', group: :production
+
 group :test, :development do
   gem 'fakeweb'
   gem 'shoulda'
