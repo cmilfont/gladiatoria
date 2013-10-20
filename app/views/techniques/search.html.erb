@@ -3,10 +3,10 @@
   <button type="submit">Search</button>
 </form>
 
-<% @techniques.each{|technique| %>
+<h1><span>Techniques</span></h1>
+<% @techniques.each do |technique| %>
 
-  <%= technique.try(:title) %>
-  <br/>
-  <%= technique.try(:description) %>
+  <h2><span><%= technique.try(:title) %></span> </h2>
+  <p><%= technique.try(:description) %></p>
 
-<% } %>
+<% end %>

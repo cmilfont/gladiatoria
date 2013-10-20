@@ -23,6 +23,9 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'rspec-rails'
 
+  gem 'simplecov'
+  gem 'simplecov-rcov'
+
   gem 'capybara'
   #gem 'capybara-webkit'
 

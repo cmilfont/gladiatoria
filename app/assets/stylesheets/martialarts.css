@@ -1,0 +1,20 @@
+.technique_thumbs {
+  display: block;
+}
+
+.technique_thumb {
+  width: 120px;
+  display: inline-block;
+  margin: 15px;
+}
+
+.logo {
+  color: #894540;
+  color: #AE4549;
+  
+  font-weight: bold;
+  font-size: 64px;
+  font-family: Trebucht;
+  color: #3E3C2F;
+  float: left;
+}

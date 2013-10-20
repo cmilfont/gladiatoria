@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
@@ -32,12 +35,20 @@ end
 
 Rspec::Matchers.define :be_mapped_by do |expect|
 
+  chain :with_boost do |boost|
+    @boost = boost
+  end
+
   match do |actual|
-    actual.class.index[ actual.class.name.tableize.to_sym ][:mappings][ actual.class.name.tableize.singularize.to_sym ][:properties][expect].present?
+    @result = actual.class.index[ actual.class.name.tableize.to_sym ][:mappings][ actual.class.name.tableize.singularize.to_sym ][:properties][expect].present?
+    @result = (@result && actual.class.index[ actual.class.name.tableize.to_sym ][:mappings][ actual.class.name.tableize.singularize.to_sym ][:properties][expect][:boost] == @boost) if @boost.present?
+    @result
   end
 
   failure_message_for_should do |actual|
-    "expected that #{actual.class} would be mapped by #{expected}"
+    @msg = "expected that #{actual.class} would be mapped by #{expected}"
+    @msg = "expected that #{actual.class} would be mapped by #{expected} with boost #{@boost}" if @boost.present?
+    @msg
   end
 
   failure_message_for_should_not do |actual|

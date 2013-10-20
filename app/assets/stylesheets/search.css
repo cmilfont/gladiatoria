@@ -1,0 +1,19 @@
+.highlight {
+  color: #B35F5B;
+  color: #B18E52;
+  color: #874225;
+}
+
+.search_form {
+  width: 530px!important;
+  top: 51px;
+  line-height: 30px;
+  margin-top: 15px;
+  
+  border-radius: 0px 0px 8px 8px!important;
+}
+
+.search_form input#q {
+  width: 300px;
+  height: 20px;
+}

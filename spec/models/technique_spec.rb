@@ -4,6 +4,7 @@ describe Technique do
 
   describe "Mapeamento" do
     it { should be_mapped_by :title }
+    it { should be_mapped_by(:title).with_boost(10) }
   end
 
   describe "Validações" do
