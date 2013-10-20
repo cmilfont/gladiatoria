@@ -18,10 +18,11 @@ gem 'elasticsearch'
 
 gem 'rails_12factor', group: :production
 
+gem 'factory_girl'
+
 group :test, :development do
   gem 'fakeweb'
   gem 'shoulda'
-  gem 'factory_girl'
   gem 'database_cleaner'
   gem 'rspec-rails'
 
