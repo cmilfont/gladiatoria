@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @martial_art.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @martial_art.description %>
+</p>
+
+<%= link_to 'Edit', edit_martial_art_path(@martial_art) %> |
+<%= link_to 'Back', martial_arts_path %>

@@ -1,5 +1,7 @@
 Gladiatoria::Application.routes.draw do
 
+  resources :martial_arts
+
   root 'techniques#search'
 
     resources :techniques do

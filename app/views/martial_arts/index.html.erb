@@ -1,0 +1,29 @@
+<h1>Artes Marciais</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @martial_arts.each do |martial_art| %>
+      <tr>
+        <td><%= martial_art.name %></td>
+        <td><%= martial_art.description %></td>
+        <td><%= link_to 'Show', martial_art %></td>
+        <td><%= link_to 'Edit', edit_martial_art_path(martial_art) %></td>
+        <td><%= link_to 'Destroy', martial_art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Martial art', new_martial_art_path %>
