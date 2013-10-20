@@ -26,9 +26,6 @@ class Technique < ActiveRecord::Base
 
 
   def self.search query=""
-
-    return [] unless query.present?
-
     begin
       results = Technique.esclient.search index:"techniques", body:"{\"query\": {\"query_string\": {\"query\": \"#{query}\"}}}"
       ids = results["hits"]["hits"].map{ |hit| hit["_id"] }
@@ -36,7 +33,6 @@ class Technique < ActiveRecord::Base
     rescue
       []
     end
+  end  # /search
 
-  end
-
-end
+end  # /Technique

@@ -38,7 +38,6 @@ describe Technique do
     context "Em caso de erro de sintaxe na query [#6]" do
       it 'Deveria retornar vazio' do
         @technique = Technique.new title: "Ura juji jime", description: "Ura-Juji-Jime", id: 2
-        # Technique.stub(:find).and_return [@technique]
         query = 'Ura('
         Technique.esclient.stub(:search).and_raise('Um Erro de Sintaxe')
         expect(Technique.search(query)).to be_empty
