@@ -1,6 +1,8 @@
 class Technique < ActiveRecord::Base
 
-  validates_presence_of :name, :description
+  has_and_belongs_to_many :martial_arts
+  
+  validates_presence_of :name, :description, :martial_arts
 
   include Searchable
 

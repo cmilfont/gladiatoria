@@ -10,6 +10,7 @@ describe Technique do
   describe "Validações" do
     it { should validate_presence_of :name }
     it { should validate_presence_of :description }
+    it { should validate_presence_of :martial_arts }
   end
 
   describe ".search" do

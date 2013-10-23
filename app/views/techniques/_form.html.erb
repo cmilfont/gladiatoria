@@ -1,0 +1,31 @@
+<%= form_for(@technique) do |f| %>
+  <% if @technique.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@technique.errors.count, "error") %> prohibited this technique from being saved:</h2>
+ 
+      <ul>
+      <% @technique.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description,  size: "84x20" %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :martial_arts %><br>
+    <%= select_tag 'technique[martial_art_ids][]', options_from_collection_for_select(MartialArt.all.order(:name), "id", "name", @technique.martial_arts.map(&:id)), { :multiple => true, :size =>10 } %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Cadastrar" %>
+  </div>
+<% end %>

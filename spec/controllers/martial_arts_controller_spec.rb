@@ -19,7 +19,6 @@ describe MartialArtsController do
         
       end
     end
-
   end
 
   describe "PUT update" do
