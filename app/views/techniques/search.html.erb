@@ -6,7 +6,7 @@
 <h1><span>Techniques</span></h1>
 <% @techniques.each do |technique| %>
 
-  <h2><span><%= technique.try(:title) %></span> </h2>
+  <h2><span><%= technique.try(:name) %></span> </h2>
   <p><%= technique.try(:description) %></p>
 
 <% end %>

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :technique do
-    title "Anaconda Choke"
+    name "Anaconda Choke"
     description "A technique whatever"
   end
 end

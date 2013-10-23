@@ -5,6 +5,6 @@ Technique.destroy_index
 Technique.create_index
 
 FactoryGirl.create :technique
-FactoryGirl.create :technique, :title => "Mata Leão"
-FactoryGirl.create :technique, :title => "Katagatame"
-FactoryGirl.create :technique, :title => "Triangulo Voador"
+FactoryGirl.create :technique, :name => "Mata Leão"
+FactoryGirl.create :technique, :name => "Katagatame"
+FactoryGirl.create :technique, :name => "Triangulo Voador"

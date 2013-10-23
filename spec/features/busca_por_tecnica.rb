@@ -10,8 +10,8 @@ feature "Busca por Técnica", %q{
     Technique.destroy_index
     Technique.create_index
     FactoryGirl.create :technique
-    FactoryGirl.create :technique, title: "Mata leão"
-    FactoryGirl.create :technique, title: "katagatame", description: "Apaga mas não bate"
+    FactoryGirl.create :technique, name: "Mata leão"
+    FactoryGirl.create :technique, name: "katagatame", description: "Apaga mas não bate"
   end
 
   scenario "Busca por texto" do

@@ -1,6 +1,6 @@
 class Technique < ActiveRecord::Base
 
-  validates_presence_of :title, :description
+  validates_presence_of :name, :description
 
   include Searchable
 
@@ -15,7 +15,7 @@ class Technique < ActiveRecord::Base
               index_analyzer: "index_analyzer",
               search_analyzer: "search_analyzer"
             },
-            title: {
+            name: {
               type: "string",
               boost: 10,
               store: true,
