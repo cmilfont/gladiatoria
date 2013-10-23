@@ -5,16 +5,16 @@ feature "Cadastro de Técnicas", %q(
 	Eu quero cadastrar uma técnica
 ) do
 	background do
-		@sanda = FactoryGirl.create(:technique)
+		@sanda = FactoryGirl.create(:gola_rodada)
 	end
 
 	scenario "Cadastrar tecnica" do
 		visit new_technique_path
-		fill_in "Name", with: "Anaconda Choke"
-		fill_in "Description", with: "A technique whatever"	
+		fill_in "Name", with: "Gola rodada"
+		fill_in "Description", with: "Apaga mas não bate"	
 		all('#technique_martial_art_ids_ option')[0].select_option
 		click_on "Cadastrar"
-		expect(page).to have_content "Anaconda Choke"
+		expect(page).to have_content "Cadastrada com sucesso"
 	end
 
 	scenario "Listar tecnicas" do
@@ -31,6 +31,6 @@ feature "Cadastro de Técnicas", %q(
 	scenario "Editar tecnica" do
 		visit techniques_path
 		click_on "Edit"
-		expect(page).to have_content "A technique whatever"
+		expect(page).to have_content "Apaga mas não bate"
 	end
 end

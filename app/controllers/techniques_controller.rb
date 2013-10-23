@@ -20,7 +20,12 @@ class TechniquesController < ApplicationController
 
   def create
     @technique = Technique.create technique_params
-    respond_with @technique
+
+    unless @technique.new_record?
+      redirect_to @technique, :notice => "Cadastrada com sucesso"
+    else
+      render :new
+    end
   end
 
   def update
