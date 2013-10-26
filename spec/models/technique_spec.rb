@@ -15,6 +15,14 @@ describe Technique do
 
   describe ".search" do
 
+    let(:technique) {
+      Technique.new name: "Ura juji jime", description: "Ura-Juji-Jime", id: 2
+    }
+
+    let(:results) {
+      [technique]
+    }
+
     before do
       @elasticsearch_object = '{"took": 1,"timed_out": false,"_shards": {"total": 5,"successful": 5,"failed": 0},"hits": {"total": 0,"max_score": null,"hits": []}}'
       FakeWeb.allow_net_connect = false
@@ -22,10 +30,12 @@ describe Technique do
     end
 
     it "Deveria trazer apenas o indexado com a busca" do
-      @technique = Technique.new name: "Ura juji jime", description: "Ura-Juji-Jime", id: 2
-      Technique.stub(:find).and_return [@technique]
-      @results = [@technique]
-      expect(Technique.search("Ura")).to eq(@results)
+
+      #@technique = Technique.new title: "Ura juji jime", description: "Ura-Juji-Jime", id: 2
+      Technique.stub(:find).and_return results #[@technique]
+      #@results = [@technique]
+      expect(Technique.search("Ura")).to eq(results)
+
     end
 
     it "Retorna vazio se não passar parâmetro" do

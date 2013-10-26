@@ -20,6 +20,8 @@ gem 'rails_12factor', group: :production
 
 gem 'factory_girl'
 
+gem 'djr'
+
 group :test, :development do
   gem 'fakeweb'
   gem 'shoulda'

@@ -11,21 +11,20 @@ class Technique < ActiveRecord::Base
     index_analyzer: "index_analyzer",
     search_analyzer: "search_analyzer"
   },
-          properties: {
-            description: {
-              type: "string",
-              index_analyzer: "index_analyzer",
-              search_analyzer: "search_analyzer"
-            },
-            name: {
-              type: "string",
-              boost: 10,
-              store: true,
-              index_analyzer: "index_analyzer",
-              search_analyzer: "search_analyzer"
-            }
-          }
-
+  properties: {
+    description: {
+      type: "string",
+      index_analyzer: "index_analyzer",
+      search_analyzer: "search_analyzer"
+    },
+    name: {
+      type: "string",
+      boost: 10,
+      store: true,
+      index_analyzer: "index_analyzer",
+      search_analyzer: "search_analyzer"
+    }
+  }
 
   def self.search query=""
     begin
