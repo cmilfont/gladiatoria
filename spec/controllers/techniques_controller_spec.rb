@@ -4,8 +4,8 @@ require 'spec_helper'
 describe TechniquesController do
 
 	before :each do 
-		Technique.destroy_index
-		Technique.create_index
+		#Technique.destroy_index
+		#Technique.create_index
 	end
 
   describe "GET #search" do
@@ -42,10 +42,9 @@ describe TechniquesController do
   describe "POST create" do
     describe "com parâmetros válidos" do
       let(:technique) {
-        FactoryGirl.build :technique
+        FactoryGirl.build :technique, :id => 2
       }
       it "criar uma nova Technique" do
-        technique.stub(:id).and_return("1")
         params = technique.attributes.slice("name", "description")
         Technique.should_receive(:create).once.with(params).and_return(technique)
         post :create, :technique => params
@@ -56,34 +55,31 @@ describe TechniquesController do
 
   describe "PUT update" do
     describe "with valid params" do
+
+      let(:technique) {
+        FactoryGirl.build :technique, :id => 2
+      }
+
       it "updates the requested technique" do
-        technique = FactoryGirl.create(:technique)
-        Technique.any_instance.should_receive(:update).with({ "name" => "Anaconda Choke" })
-        put :update, {:id => technique.to_param, :technique => { "name" => "Anaconda Choke" }}
+        Technique.should_receive(:find).once.with(technique.id.to_s).and_return technique
+        Technique.any_instance.should_receive(:update).once.with({ "name" => "Anaconda Choke" })
+        put :update, {:id => technique.id, :technique => { "name" => "Anaconda Choke" }}
       end
 
-      it "redirects to the technique" do
-        technique = FactoryGirl.create(:technique)
-        put :update, {:id => technique.to_param, :technique => { "name" => "Anaconda Choke" }}
-        response.should redirect_to(technique)
-      end
     end
   end
 
   describe "DELETE destroy" do
+
+    let(:technique) {
+      FactoryGirl.build :technique, :id => 2
+    }
+
     it "destroys the requested technique" do
-      technique = FactoryGirl.create :technique
-      expect {
-        delete :destroy, {:id => technique.to_param}
-      }.to change(Technique, :count).by(-1)
+      Technique.should_receive(:find).once.with(technique.id.to_s).and_return technique
+      Technique.any_instance.should_receive(:destroy).once
+      delete :destroy, :id => technique.id
     end
-
-    it "redirects to the techniques list" do
-      technique = FactoryGirl.create :technique
-      delete :destroy, {:id => technique.to_param}
-      response.should redirect_to(techniques_url)
-    end
-
   end
 
 end

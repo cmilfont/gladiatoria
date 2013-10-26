@@ -6,6 +6,7 @@ class TechniquesController < ApplicationController
 
   def index
     @techniques = Technique.all
+    respond_with @techniques
   end
 
   def show
@@ -20,12 +21,7 @@ class TechniquesController < ApplicationController
 
   def create
     @technique = Technique.create technique_params
-
-    unless @technique.new_record?
-      redirect_to @technique, :notice => "Cadastrada com sucesso"
-    else
-      render :new
-    end
+    respond_with @technique
   end
 
   def update
@@ -35,7 +31,7 @@ class TechniquesController < ApplicationController
 
   def destroy
     @technique.destroy
-    redirect_to techniques_url
+    respond_with @technique
   end
 
   def search
